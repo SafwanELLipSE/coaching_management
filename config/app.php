@@ -161,6 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        // Repository class
         App\Http\Repository\Course\CourseRepositoryServiceProvider::class,
         App\Http\Repository\Classes\ClassRepositoryServiceProvider::class,
         App\Http\Repository\Teacher\TeacherServiceProvider::class,
@@ -173,6 +174,7 @@ return [
         App\Http\Repository\Attendance\Student\SAttendanceServiceProvider::class,
         App\Http\Repository\Attendance\Teacher\TAttendanceServiceProvider::class,
         App\Http\Repository\StudentGrading\StudentGradeServiceProvider::class,
+        App\Http\Repository\Home\HomeRepositoryServiceProvider::class,
         /*
          * Package Service Providers...
          */

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Repository\Home\HomeInterface;
 
 class HomeController extends Controller
 {
@@ -11,9 +13,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(HomeInterface $homeInterface)
     {
         $this->middleware('auth');
+        $this->homeInterface = $homeInterface;
     }
 
     /**
@@ -23,6 +26,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home', [
+            'studentCount' => $this->homeInterface->studentCount(),
+            'teacherCount' => $this->homeInterface->teacherCount(),
+            'classesCount' => $this->homeInterface->classesCount(),
+            'classroomCount' => $this->homeInterface->classroomCount(),
+            'courseCount' => $this->homeInterface->courseCount(),
+            'examinationCount' => $this->homeInterface->examinationCount(),
+            'questionCount' => $this->homeInterface->questionCount(),
+            'gradeCount' => $this->homeInterface->gradeCount(),
+        ]);
     }
 }

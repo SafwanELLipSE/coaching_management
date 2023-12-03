@@ -20,6 +20,7 @@
         .card-dark-moon.card-outline {
             border-top: 3px solid #1B3750;
         }
+
         .btn-dark-moon {
             background: #141E30;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to right, #5f7792, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
@@ -28,9 +29,11 @@
             border: 3px solid #eee;
             border-radius: 6px;
         }
+
         .btn-dark-moon:hover,:focus{
             color: #F15B2B;
         }
+
         .icheck-primary > input:first-child:not(:checked):not(:disabled):hover + label::before,
         .icheck-primary > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
             border-color: #F15B2B;
@@ -46,6 +49,7 @@
             background-color: #141E30;
             border-color: #141E30;
         }
+        
         .form-control:focus{
             border: 1px solid #F15B2B;
         }

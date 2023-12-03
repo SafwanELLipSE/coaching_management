@@ -33,6 +33,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('delete/{id}', ['as' => 'delete', 'uses' => 'Admin\CourseController@delete']);
         Route::get('search', ['as' => 'search', 'uses' => 'Admin\CourseController@list']);
     });
+
     Route::group(['prefix' => 'grade', 'as' => 'grade.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'Admin\GradeController@index']);
         Route::post('save-created', ['as' => 'save_created', 'uses' => 'Admin\GradeController@store']);
@@ -42,6 +43,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('delete/{id}', ['as' => 'delete', 'uses' => 'Admin\GradeController@delete']);
         Route::get('search', ['as' => 'search', 'uses' => 'Admin\GradeController@list']);
     });
+
     Route::group(['prefix' => 'class', 'as' => 'class.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'Admin\ClassController@index']);
         Route::post('save-created', ['as' => 'save_created', 'uses' => 'Admin\ClassController@store']);
@@ -50,6 +52,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('delete/{id}', ['as' => 'delete', 'uses' => 'Admin\ClassController@delete']);
         Route::get('search', ['as' => 'search', 'uses' => 'Admin\ClassController@list']);
     });
+
     Route::group(['prefix' => 'teacher', 'as' => 'teacher.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'Admin\TeacherController@index']);
         Route::post('save-created', ['as' => 'save_created', 'uses' => 'Admin\TeacherController@store']);
@@ -63,6 +66,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('display-teacher/{id}', ['as' => 'display_teacher', 'uses' => 'Admin\TeacherAttendanceController@displayAttendanceTeacher']);
         Route::post('report-teacher', ['as' => 'report_teacher', 'uses' => 'Admin\TeacherAttendanceController@monthlyReportTeacher']);
     });
+
     Route::group(['prefix' => 'student', 'as' => 'student.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'Admin\StudentController@index']);
         Route::post('save-created', ['as' => 'save_created', 'uses' => 'Admin\StudentController@store']);
@@ -78,6 +82,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('display-student/{id}', ['as' => 'display_student', 'uses' => 'Admin\StudentAttendanceController@displayAttendanceStudent']);
         Route::post('report-student', ['as' => 'report_student', 'uses' => 'Admin\StudentAttendanceController@monthlyReportStudent']); 
     });
+
     Route::group(['prefix' => 'classroom', 'as' => 'classroom.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'Admin\ClassroomController@index']);
         Route::post('save-created', ['as' => 'save_created', 'uses' => 'Admin\ClassroomController@store']);
@@ -119,6 +124,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('status-exam-count', ['as' => 'status_exam_count', 'uses' => 'Admin\ExaminationController@statusCountSimilarClassroom']);
         Route::post('mark-checker', ['as' => 'mark_checker', 'uses' => 'Admin\ExaminationController@markCheckClassroom']);
     });
+
     Route::group(['prefix' => 'question', 'as' => 'question.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'Admin\QuestionController@index']);
         Route::post('count', ['as' => 'count', 'uses' => 'Admin\QuestionController@count']);
@@ -140,6 +146,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('teacher-view', ['as' => 'teacher_view', 'uses' => 'Admin\TeacherAttendanceController@index']);
         Route::post('teacher-attendance-save', ['as' => 'teacher_attendance_save', 'uses' => 'Admin\TeacherAttendanceController@storeTeacherAttendance']);
     });
+    
     Route::group(['prefix' => 'studentGrade', 'as' => 'studentGrade.'], function () {
         Route::get('grading-student/{id}', ['as' => 'grading_student', 'uses' => 'Admin\StudentGradeController@index']);
         Route::post('determine-grade', ['as' => 'determine_grade', 'uses' => 'Admin\StudentGradeController@gradeEstimation']);
